@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] RunTimeData _runtimeData;
     [SerializeField] float _mouseSensitivity = 5f;
     [SerializeField] float _moveSpeed = 3f;
     [SerializeField] Camera _cam;
@@ -18,7 +19,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         Aim();
-        Movement();
+        if (_runtimeData.CurrentGameplayState == GameplayState.FreeWalk)
+            Movement();
     }
 
     void Aim()
