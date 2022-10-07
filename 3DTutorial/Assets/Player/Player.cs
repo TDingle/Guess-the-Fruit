@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -8,7 +10,10 @@ public class Player : MonoBehaviour
     [SerializeField] float _mouseSensitivity = 5f;
     [SerializeField] float _moveSpeed = 3f;
     [SerializeField] Camera _cam;
+    [SerializeField] TextMeshProUGUI _death;
+    [SerializeField] Camera _deathCam;
     float _currentTilt = 0f;
+    public static bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +26,15 @@ public class Player : MonoBehaviour
         Aim();
         if (_runtimeData.CurrentGameplayState == GameplayState.FreeWalk)
             Movement();
-    }
+        if (isAlive == false)
+        {
+            Destroy(gameObject);
+            _death.gameObject.SetActive(true);
+            _deathCam.gameObject.SetActive(true);
+           Application.Quit();
+        }
 
+    }
     void Aim()
     {
         float mouseX = Input.GetAxis("Mouse X");

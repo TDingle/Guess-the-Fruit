@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _runtimeData: {fileID: 11400000, guid: 31f8e636f7e7c4c45b67828ccd4bd58b, type: 2}
+  _parentQuiz: {fileID: 0}
 --- !u!135 &8216104115958253395
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -55,7 +56,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8216104115958253398}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.25
