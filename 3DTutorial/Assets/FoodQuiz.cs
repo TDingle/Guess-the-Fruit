@@ -29,7 +29,7 @@ public class FoodQuiz : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moveToward == true)
+        if (moveToward == true && Player.isAlive == true)
         {
             GameObject cameraObj = Camera.main.gameObject;
             target = cameraObj.transform;
