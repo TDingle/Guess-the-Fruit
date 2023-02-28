@@ -1,1 +1,1 @@
-# LoganHines_3DTutorial
+# Simple 3D fruit guessing game
